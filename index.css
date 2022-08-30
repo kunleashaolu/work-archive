@@ -4,6 +4,7 @@
     url('fonts/satoshi-bold-webfont.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,6 +13,16 @@
     url('fonts/satoshi-regular-webfont.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --base-font-size: calc(5rem + 1.8vw);
+}
+
+html {
+  font-size: 100%;
+  font-family: SatoshiBold, Arial, sans-serif;
 }
 
 html:focus-within {
@@ -42,15 +53,16 @@ ol {
 
 body {
   background-color: #faffeb;
-  color: #0d0d0d;
-  font-family: SatoshiBold, Arial, sans-serif;
   line-height: 1.2;
   margin: 0;
   min-height: 100vh;
+  color: #0d0d0d;
 }
 
 .main_container {
-  margin-inline: 3rem;
+  margin: auto;
+  position: relative;
+  width: min(90vw, 1440px);
 }
 
 header {
@@ -64,7 +76,7 @@ header {
 
 .site_info {
   font-family: SatoshiRegular, Arial, sans-serif;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   line-height: 1.05;
   text-align: end;
   width: 16ch;
@@ -74,13 +86,22 @@ header {
 
 ol {
   margin-top: 3rem;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+li {
+  width: fit-content;
 }
 
 h2 {
-  font-size: 6.4rem;
-  letter-spacing: -0.05em;
   cursor: pointer;
+  font-size: var(--base-font-size);
+  letter-spacing: -0.05em;
+  line-height: 0.85;
   width: fit-content;
+  margin: 0;
+  margin-bottom: 18px;
 }
 
 .visited {
