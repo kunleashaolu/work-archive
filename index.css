@@ -17,7 +17,8 @@
 }
 
 :root {
-  --base-font-size: calc(5rem + 1.8vw);
+  --base: 5rem;
+  --font-size: clamp(2rem, 10vw, 8rem);
 }
 
 html {
@@ -86,22 +87,20 @@ header {
 
 ol {
   margin-top: 3rem;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
   hyphens: auto;
 }
 
 li {
   width: fit-content;
+  margin-bottom: 16px;
 }
 
 h2 {
   cursor: pointer;
-  font-size: var(--base-font-size);
+  font-size: var(--font-size);
   letter-spacing: -0.05em;
   line-height: 0.85;
-  width: fit-content;
-  margin: 0;
-  margin-bottom: 18px;
 }
 
 .visited {
