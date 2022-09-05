@@ -99,6 +99,7 @@ li {
 h2 {
   font-size: var(--font-size);
   letter-spacing: -0.05em;
+  cursor: pointer;
 }
 
 .visited {
