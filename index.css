@@ -79,7 +79,7 @@ header {
 .site_info {
   color: #1a1a1a;
   font-family: SatoshiRegular, Arial, sans-serif;
-  font-size: 0.8rem;
+  font-size: clamp(0.5rem, 1vw, 2rem);
   line-height: 1.05;
   position: relative;
   text-align: end;
