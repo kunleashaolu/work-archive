@@ -54,10 +54,10 @@ ol {
 
 body {
   background-color: #faffeb;
+  color: #0d0d0d;
   line-height: 1.2;
   margin: 0;
   min-height: 100vh;
-  color: #0d0d0d;
 }
 
 .main_container {
@@ -76,35 +76,66 @@ header {
 }
 
 .site_info {
+  color: #1a1a1a;
   font-family: SatoshiRegular, Arial, sans-serif;
   font-size: 0.8rem;
   line-height: 1.05;
+  position: relative;
   text-align: end;
   width: 16ch;
-  color: #1a1a1a;
-  position: relative;
 }
 
 ol {
+  hyphens: auto;
   margin-top: 3rem;
   overflow-wrap: break-word;
-  hyphens: auto;
 }
 
 li {
-  width: fit-content;
   margin-bottom: 16px;
+  width: fit-content;
 }
 
 h2 {
-  cursor: pointer;
   font-size: var(--font-size);
   letter-spacing: -0.05em;
-  line-height: 0.85;
 }
 
 .visited {
   color: #f35b04;
+}
+
+.nav_text {
+  display: inline-block;
+  position: relative;
+  transition: 0.6s ease;
+  transition-delay: 0.2s;
+}
+
+.nav_text::before {
+  content: attr(data-content);
+  height: 100%;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: width 0.8s cubic-bezier(0.3, 0.73, 0.27, 0.97);
+  width: 0;
+}
+
+.nav_text::before {
+  color: #f35b04;
+}
+
+.nav_text:hover {
+  border-style: none;
+  color: #f35b04;
+  outline: none;
+}
+
+.nav_text:focus::before,
+.nav_text:hover::before {
+  width: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
